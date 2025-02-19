@@ -1,0 +1,77 @@
+.tests1_admin {
+    display: flex;
+    flex-direction: column;
+    padding-left: 314px;
+    padding-top: 60px;
+}
+
+.tests1_admin_header{
+  text-align: left;
+  font: normal normal bold 33px/47px Open Sans, sans-serif;
+  letter-spacing: 0px;
+  color: #43425D;
+  opacity: 1;
+  padding-top: 60px;
+  padding-left: 90px;
+}
+
+.tests1_admin_buttons{
+    display: flex;
+    padding-left: 90px;
+    padding-top: 40px;
+    gap: 58px;
+}
+
+
+.card_button_start {
+    padding: 10px 20px;
+    font: normal normal normal 16px/27px Open Sans, sans-serif;
+    color: white;
+    background-color: #5F249F; /* Purple color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 270px;
+    height: 60px;
+}
+
+.tests1_admin_table{
+  padding-left: 90px;
+  padding-top: 45px;
+}
+
+.tests1_admin_table table{
+    padding-top: 100px;
+    border: none;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 1400px
+}
+
+  .tests1_admin_table thead {
+    font: normal normal bold 16px/27px Open Sans, sans-serif;
+    letter-spacing: 0px;
+    color: #63666A;
+    color: #43425D;
+    border: none;
+  }
+  
+ 
+  
+.tests1_admin_table th, td {
+    padding: 8px;
+    text-align: left;
+    font: normal normal normal 14px/27px Open Sans, sans-serif;
+    letter-spacing: 0px;
+    color: #43425D;
+    opacity: 1;
+    border: none;
+  }
+  
+  .tests1_admin_table th {
+    background-color: #DFC8F8;
+    font-weight: bold;
+    color: #63666A;
+    border: none;
+  }

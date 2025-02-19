@@ -1,0 +1,86 @@
+.learners1 {
+    display: flex;
+    width: 100vw;
+    padding-left: 314px;
+    padding-top: 60px ;
+}
+  
+.learners1_content{
+    display: flex;
+    flex-direction: column;
+    padding-left: 88px;
+    padding-top: 60px;
+}
+
+.learners1_search{
+  display: flex;
+  flex-direction: row;
+  padding-top:50px;
+  margin-left:0px;
+}
+
+.learners1_header{
+    font: normal normal bold 33px/47px Open Sans, sans-serif;
+    color: #43425D;
+    opacity: 1;
+}
+
+.learners1_buttons{
+  display: flex;
+  flex-direction: row;
+  padding-left: 650px;
+  align-self: flex-end;
+  gap: 10px;
+}
+
+.learners_add{
+  height: 40px;
+  width: 170px;
+  background-color: #5F249F; /* Purple color */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font: normal normal 15px Open Sans, sans-serif;
+}
+
+.learners_bulk{
+  height: 40px;
+  width: 170px;
+  background-color: #5F249F; /* Purple color */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font: normal normal 15px Open Sans, sans-serif;
+}
+
+.learners1-table{
+  padding-top: 40px;
+}
+
+.learners1-table table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #FBFBFB
+  }
+  
+  .learners1-table thead{
+    font-size: 33px;
+    color: #43425D;
+  }
+  
+  .learners1-table th, td {
+    padding: 8px;
+    text-align: left;
+    font: normal normal normal 14px/27px Open Sans, sans-serif;
+    letter-spacing: 0px;
+    color: #43425D;
+    opacity: 1;
+  }
+  
+  .learners1-table th {
+    background-color: #DFC8F8;
+    font-weight: bold;
+    color: #63666A;
+  }

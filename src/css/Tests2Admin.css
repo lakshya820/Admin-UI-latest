@@ -1,0 +1,152 @@
+.tests2_admin {
+    display: flex;
+    flex-direction: column;
+    padding-left: 314px;
+    padding-top: 60px;
+}
+
+.tests2_admin_header{
+  text-align: left;
+  font: normal normal bold 33px/47px Open Sans, sans-serif;
+  letter-spacing: 0px;
+  color: #43425D;
+  opacity: 1;
+  padding-top: 60px;
+  padding-left: 90px;
+}
+
+.tests2_admin_card{
+    margin-top: 50px;
+    margin-left: 90px;
+
+    display:flex;
+    flex-direction: column; 
+    width: 1330px;
+    height: 940px;
+
+    
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px #00000029;
+    border-radius: 15px;
+    opacity: 1;
+}
+
+/*.tests2_admin_card_header{
+    font: normal normal 400 24px/25px Open Sans, sans-serif;
+    letter-spacing: 0px;
+    color: #43425D;
+    opacity: 1;
+    padding-left: 30px;
+    padding-top: 25px;
+}
+
+.section1{
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.section1 label{
+    font: normal normal normal 15px/25px Open Sans,sans-serif;
+}*/
+
+  .content_header {
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font: normal normal bold 33px/47px Open Sans, sans-serif;
+  }
+  
+  .content_header h2 {
+    font-size: 24px;
+    color: #43425D;
+  }
+  
+  .form_group {
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  
+  .form_group label {
+    display: block;
+    font-size: 16px;
+    color: #43425D;
+    margin-bottom: 5px;
+    font: normal normal 16px Open Sans, sans-serif;
+  }
+  
+  .form_group input[type="text"],
+  .form_group input[type="date"],
+  .form_group input[type="time"],
+  .form_group select,
+  .form_group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #43425D;
+    margin-bottom: 5px;
+  }
+  
+  .form_group textarea {
+    resize: vertical;
+  }
+  
+  .form_group h3 {
+    font-size: 20px;
+    color: #43425D;
+    margin-bottom: 10px;
+  }
+  
+  .form_group input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .form_group a {
+    color: #6C63FF; /* Purple color */
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .form_group a:hover {
+    text-decoration: underline;
+  }
+  
+  .form_buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button_save {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #5F249F;
+  color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button_save:hover {
+    background-color: #5a54d6; /* Darker purple on hover */
+  }
+  
+  .button_cancel {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c757d; /* Gray color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button_cancel:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+  }
+  

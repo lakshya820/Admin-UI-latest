@@ -1,0 +1,38 @@
+.admin_dashboard {
+    display: flex;
+    width: 100%;  /* Changed from 100vw to avoid horizontal scrolling */
+    min-height: 100vh;
+    padding-left: 314px;
+    padding-top: 60px;
+    flex-direction: column;
+    background-color: #FFFFFF;  /* Adding background color from the image */
+}
+  
+.dashboard_header {
+    display: flex;
+    padding: 20px 0 20px 88px;  /* Simplified padding */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 47px;
+    letter-spacing: 0px;
+    color: #43425D;
+}
+  
+.dashboard_center {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 127px); /* 60px top padding + 47px header + 20px padding */
+    padding-bottom: 20px;
+}
+
+.dashboard_chart1 {
+    margin-left: 88px;
+    margin-right: 20px;
+    padding: 20px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 20px #00000029;
+    border-radius: 15px;
+    width: calc(100% - 108px);
+    height: 100%; /* Changed from height: fit-content */
+}
