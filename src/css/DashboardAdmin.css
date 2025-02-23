@@ -1,38 +1,68 @@
 .admin_dashboard {
     display: flex;
-    width: 100%;  /* Changed from 100vw to avoid horizontal scrolling */
+    width: 100%;
     min-height: 100vh;
-    padding-left: 314px;
-    padding-top: 60px;
+    padding-left: 280px; /* Adjusted to match the sidebar width */
+    padding-top: 48px;  /* Reduced top padding */
     flex-direction: column;
-    background-color: #FFFFFF;  /* Adding background color from the image */
+    background-color: #FAFAFE; /* Updated to match the light gray background */
 }
-  
+
 .dashboard_header {
     display: flex;
-    padding: 20px 0 20px 88px;  /* Simplified padding */
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 33px;
-    line-height: 47px;
-    letter-spacing: 0px;
+     padding: 40px 0 20px 88px;  /* Simplified padding */
+    font: normal normal bold 33px/47px Open Sans, sans-serif;
+    line-height: 32px; /* Adjusted line height */
     color: #43425D;
 }
-  
+
 .dashboard_center {
     display: flex;
     flex: 1;
-    height: calc(100vh - 127px); /* 60px top padding + 47px header + 20px padding */
-    padding-bottom: 20px;
+    height: calc(100vh - 104px); /* Adjusted for new header height */
+    padding-bottom: 24px;
 }
 
 .dashboard_chart1 {
-    margin-left: 88px;
-    margin-right: 20px;
-    padding: 20px;
-    background: #FBFBFB;
-    box-shadow: 0px 0px 20px #00000029;
-    border-radius: 15px;
-    width: calc(100% - 108px);
-    height: 100%; /* Changed from height: fit-content */
+    margin-left: 64px;
+    margin-right: 24px;
+    padding: 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    border-radius: 8px; /* Reduced border radius */
+    width: calc(100% - 88px);
+    height: 90%;
+}
+
+/* Add styles for responsive behavior */
+@media (max-width: 1280px) {
+    .admin_dashboard {
+        padding-left: 240px;
+    }
+
+    .dashboard_chart1 {
+        margin-left: 48px;
+        margin-right: 16px;
+        width: calc(100% - 64px);
+    }
+}
+
+/* Add styles for scrollable content */
+.dashboard_chart1 {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #E5E7EB transparent;
+}
+
+.dashboard_chart1::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dashboard_chart1::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dashboard_chart1::-webkit-scrollbar-thumb {
+    background-color: #E5E7EB;
+    border-radius: 3px;
 }

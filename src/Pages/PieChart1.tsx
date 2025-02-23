@@ -1,43 +1,36 @@
 import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
+import '../css/PieChart1.css';
 
 const CircularProgress = () => {
-  const value = 55; // The progress value
+  const value = 55;
   const data = [
     { value: value },
-    { value: 100 - value } // Remaining portion
+    { value: 100 - value }
   ];
 
   return (
-    <div className="flex flex-col items-center bg-white rounded-lg p-6 shadow-sm">
-      <h2 className="text-lg font-semibold mb-4">Overall Rating</h2>
-      <div className="relative w-48 h-48">
-        <PieChart width={192} height={192}>
+    <div className="circular-progress-container">
+      <p className="circular-progress-title">Overall Rating</p>
+      <div className="circular-progress-chart">
+        <PieChart width={180} height={180}>
           <Pie
             data={data}
-            cx={96}
-            cy={96}
-            innerRadius={75}
-            outerRadius={85}
+            cx={90}
+            cy={90}
+            innerRadius={70}
+            outerRadius={80}
             startAngle={90}
             endAngle={-270}
             dataKey="value"
+            strokeWidth={0}
           >
-            {/* Background circle */}
-            <Cell fill="#F3F4F6" />
-            {/* Progress circle */}
-            <Cell fill="url(#progressGradient)" />
+            <Cell fill="#E5E7EB" /> {/* Background circle */}
+            <Cell fill="#5F249F" /> {/* Progress circle - using solid color instead of gradient */}
           </Pie>
-          <defs>
-            <linearGradient id="progressGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#7E22CE" />
-              <stop offset="100%" stopColor="#6B21A8" />
-            </linearGradient>
-          </defs>
         </PieChart>
-        {/* Centered text */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span className="text-3xl font-bold text-gray-800">55%</span>
+        <div className="circular-progress-value">
+          <span>{value}%</span>
         </div>
       </div>
     </div>

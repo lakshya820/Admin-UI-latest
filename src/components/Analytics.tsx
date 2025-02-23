@@ -14,10 +14,9 @@ const Analytics: React.FC = () => {
             <div className="analytics">
                 
                     <div className="analytics_content">
-                        <h5>Analytics</h5>
-                        <h4>Analytics-Andrew Jhonston</h4>
-                        <h3>Andrew Jhonston</h3>
-                        <h2></h2>
+                        <p className="p1">Analytics</p>
+                        <p className="p2">Analytics-Andrew Jhonston</p>
+                        {/* <p className="p3">Andrew Jhonston</p> */}
                         <div className="analytics_center">
                         <div className="overall_rating_card">
                                 <PieChart1></PieChart1>
@@ -31,16 +30,32 @@ const Analytics: React.FC = () => {
                         </div>
                         <div className="analytics_swot">
                             <div className="sw">
-                                <label>Strength</label>
-                                <textarea readOnly>The individual has good comprehension and listening skills, which suggests they can understand spoken information and instructions well. This is crucial for effective communication and collaboration.</textarea>
-                                <label>Weaknesses</label>
-                                <textarea readOnly>The individual may struggle with articulating ideas smoothly or coming up with spontaneous responses, affecting their confidence in conversation.</textarea>
+                                <div className="swot-section">
+                                    <div className="swot-title">Strength</div>
+                                    <div className="swot-content">
+                                        The individual has good comprehension and listening skills, which suggests they can understand spoken information and instructions well. This is crucial for effective communication and collaboration.
+                                    </div>
+                                </div>
+                                <div className="swot-section">
+                                    <div className="swot-title">Opportunities</div>
+                                    <div className="swot-content">
+                                        With targeted speech and communication training, especially focused on improving grammar, fluency, and pronunciation, the individual has the opportunity to significantly enhance their communication skills.
+                                    </div>
+                                </div>
                             </div>
                             <div className="ot">
-                                <label>Opportuinities</label>
-                                <textarea readOnly>With targeted speech and communication training, especially focused on improving grammar, fluency, and pronunciation, the individual has the opportunity to significantly enhance their communication skills.</textarea>
-                                <label>Threats</label>
-                                <textarea readOnly> Poor pronunciation, grammar, and speech clarity may lead to miscommunication or misunderstandings, which could hinder personal and professional relationships.</textarea>
+                                <div className="swot-section">
+                                    <div className="swot-title">Weaknesses</div>
+                                    <div className="swot-content">
+                                        The individual may struggle with articulating ideas smoothly or coming up with spontaneous responses, affecting their confidence in conversation.
+                                    </div>
+                                </div>
+                                <div className="swot-section">
+                                    <div className="swot-title">Threats</div>
+                                    <div className="swot-content">
+                                        Poor pronunciation, grammar, and speech clarity may lead to miscommunication or misunderstandings, which could hinder personal and professional relationships.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

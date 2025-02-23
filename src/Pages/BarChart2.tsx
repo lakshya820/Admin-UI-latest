@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, CartesianGrid, Legend } from 'recharts';
+import '../css/BarChart2.css';
 
 const TestTrendsChart = () => {
   const data = [
@@ -11,40 +12,44 @@ const TestTrendsChart = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-sm">
-      <h2 className="text-lg font-semibold mb-6">Test Trends</h2>
-      <div className="w-full h-64">
+    <div className="test-trends-container">
+      <p className="test-trends-title">Test Trends</p>
+      <div className="chart-container">
         <BarChart
           width={400}
           height={250}
           data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          margin={{ top: 30, right: 30, left: 20, bottom: 5 }}
+          barGap={8}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis 
             dataKey="month" 
             axisLine={false}
             tickLine={false}
-            tick={{ fill: '#6B7280' }}
           />
-          <Bar 
+         <Bar 
             dataKey="oral" 
-            fill="#2563EB"
-            radius={[4, 4, 0, 0]} 
-            barSize={20}
+            radius={[3, 3, 0, 0]} 
+            barSize={16}
+            name="Chat"  // Changed from "oral" to "Chat"
+            fill="#3B82F6"
           />
           <Bar 
             dataKey="voice" 
-            fill="#0D9488"
-            radius={[4, 4, 0, 0]} 
-            barSize={20}
+            radius={[3, 3, 0, 0]} 
+            barSize={16}
+            name="Voice"  // Capitalized "voice" to "Voice"
+            fill="#10B981"
           />
           <Legend
-            align="right"
-            verticalAlign="top"
-            iconType="circle"
+            align="left"          // Changed from 'right' to 'left'
+            verticalAlign="bottom"
+            iconType="line"       // Changed from 'circle' to 'rect' for wider icon
+            iconSize={30}         // Increased icon size
             wrapperStyle={{
-              paddingBottom: '20px'
+              paddingTop: '20px',
+              left: '20px'        // Added left padding
             }}
           />
         </BarChart>
