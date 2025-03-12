@@ -2,25 +2,32 @@
     display: flex;
     width: 100%;
     min-height: 100vh;
-    padding-left: 280px; /* Adjusted to match the sidebar width */
-    padding-top: 48px;  /* Reduced top padding */
+    padding-left: 314px; /* Adjusted for sidebar width (19.625rem) */
+    padding-top: 60px; /* Match the header height */
+    margin-top: 0; /* Ensure no gap with header */
     flex-direction: column;
-    background-color: #FAFAFE; /* Updated to match the light gray background */
+    background-color: #FAFAFE;
+    box-sizing: border-box;
+    position: relative; /* For proper stacking context */
 }
 
 .dashboard_header {
     display: flex;
-     padding: 40px 0 20px 88px;  /* Simplified padding */
-    font: normal normal bold 33px/47px Open Sans, sans-serif;
-    line-height: 32px; /* Adjusted line height */
+    padding: 40px 0 20px 88px;
+    font: normal normal bold 33px/47px 'Open Sans', sans-serif;
+    line-height: 32px;
     color: #43425D;
+    position: relative; /* Ensures z-index works properly */
+    z-index: 800; /* Ensures it's above navbar but below header */
 }
 
 .dashboard_center {
     display: flex;
     flex: 1;
-    height: calc(100vh - 104px); /* Adjusted for new header height */
+    height: calc(100vh - 104px);
     padding-bottom: 24px;
+    position: relative; /* For z-index to work */
+    z-index: 800; /* Same as header to ensure content stays above navbar */
 }
 
 .dashboard_chart1 {
@@ -28,27 +35,10 @@
     margin-right: 24px;
     padding: 24px;
     background: #FFFFFF;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    border-radius: 8px; /* Reduced border radius */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
     width: calc(100% - 88px);
     height: 90%;
-}
-
-/* Add styles for responsive behavior */
-@media (max-width: 1280px) {
-    .admin_dashboard {
-        padding-left: 240px;
-    }
-
-    .dashboard_chart1 {
-        margin-left: 48px;
-        margin-right: 16px;
-        width: calc(100% - 64px);
-    }
-}
-
-/* Add styles for scrollable content */
-.dashboard_chart1 {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #E5E7EB transparent;
@@ -65,4 +55,140 @@
 .dashboard_chart1::-webkit-scrollbar-thumb {
     background-color: #E5E7EB;
     border-radius: 3px;
+}
+
+/* Large screens */
+@media (max-width: 1440px) {
+    .admin_dashboard {
+        padding-left: 314px; /* Keep consistent with navbar width */
+    }
+
+    .dashboard_header {
+        padding: 30px 0 16px 64px;
+        font-size: 30px;
+    }
+
+    .dashboard_chart1 {
+        margin-left: 48px;
+        margin-right: 16px;
+        width: calc(100% - 64px);
+    }
+}
+
+/* Medium screens */
+@media (max-width: 1280px) {
+    .admin_dashboard {
+        padding-left: 240px;
+    }
+
+    .dashboard_header {
+        padding: 25px 0 14px 48px;
+        font-size: 28px;
+    }
+
+    .dashboard_chart1 {
+        margin-left: 36px;
+        margin-right: 12px;
+        width: calc(100% - 48px);
+    }
+}
+
+/* Small tablets */
+@media (max-width: 992px) {
+    .admin_dashboard {
+        padding-left: 220px;
+    }
+
+    .dashboard_header {
+        padding: 20px 0 12px 36px;
+        font-size: 26px;
+    }
+
+    .dashboard_chart1 {
+        margin-left: 24px;
+        margin-right: 12px;
+        padding: 20px;
+        width: calc(100% - 36px);
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .admin_dashboard {
+        padding-left: 0;
+        padding-bottom: 60px; /* Space for bottom navbar */
+    }
+
+    .dashboard_header {
+        padding: 16px 16px 12px 16px;
+        font-size: 24px;
+        justify-content: center;
+    }
+
+    .dashboard_center {
+        padding-bottom: 16px;
+    }
+
+    .dashboard_chart1 {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: calc(100% - 32px);
+        height: 85%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .dashboard_header {
+        padding: 12px 12px 8px 12px;
+        font-size: 22px;
+    }
+
+    .dashboard_chart1 {
+        margin-left: 12px;
+        margin-right: 12px;
+        padding: 16px;
+        width: calc(100% - 24px);
+    }
+}
+
+/* Support for 125% scaling */
+@media (min-resolution: 120dpi) {
+    .admin_dashboard {
+        padding-top: 55px; /* Slightly reduced to prevent gap */
+    }
+    
+    .dashboard_header {
+        font-size: 30px;
+        padding-left: 70px; /* Adjusted to prevent overlap */
+        padding-top: 30px; /* Less top padding */
+    }
+}
+
+/* Support for 150% scaling */
+@media (min-resolution: 144dpi) {
+    .admin_dashboard {
+        padding-top: 50px;
+        padding-left: 300px; /* Adjusted for navbar width at this scaling */
+    }
+    
+    .dashboard_header {
+        font-size: 26px;
+        padding-left: 60px;
+        padding-top: 25px;
+    }
+}
+
+/* Support for very high DPI screens (175%+) */
+@media (min-resolution: 192dpi) {
+    .admin_dashboard {
+        padding-top: 45px;
+        padding-left: 290px;
+    }
+    
+    .dashboard_header {
+        font-size: 24px;
+        padding-left: 50px;
+        padding-top: 20px;
+    }
 }

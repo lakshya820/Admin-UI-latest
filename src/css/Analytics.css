@@ -1,46 +1,47 @@
 .analytics {
     display: flex;
-    width: 100%;  /* Changed from 100vw */
+    width: 100%;
     padding-left: 314px;
     padding-top: 60px;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
   
-.analytics_content{
+.analytics_content {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
   
-.p1{
-    padding: 40px 0 0px 88px;  /* Simplified padding */
+.p1 {
+    padding: 40px 0 0px 88px;
     text-align: left;
-    font: normal normal bold 33px/47px Open Sans, sans-serif;
+    font: normal normal bold 33px/47px 'Open Sans', sans-serif;
     color: #43425D;
     opacity: 1;
 }
   
-.p2{
-    padding: 0px 0 0px 88px;  /* Simplified padding */
-    font: normal normal normal 12px/47px Open Sans, sans-serif;
+.p2 {
+    padding: 0px 0 0px 88px;
+    font: normal normal normal 12px/47px 'Open Sans', sans-serif;
     text-align: left;
     letter-spacing: 0px;
     color: #43425D;
     opacity: 1;
 }
 
-.p3{
-    padding: 0px 0 10px 88px;  /* Simplified padding */
-    font: normal normal normal 20px/24px Open Sans, sans-serif;
+.p3 {
+    padding: 0px 0 10px 88px;
+    font: normal normal normal 20px/24px 'Open Sans', sans-serif;
     text-align: left;
     letter-spacing: 0px;
     color: #0B2257;
     opacity: 1;
 }
 
-.analytics_content h2{
-    padding: 0px 0 20px 88px;  /* Simplified padding */
-    font: normal normal normal 14px/19px Open Sans, sans-serif;
+.analytics_content h2 {
+    padding: 0px 0 20px 88px;
+    font: normal normal normal 14px/19px 'Open Sans', sans-serif;
     text-align: left;
     letter-spacing: 0px;
     color: #817E7E;
@@ -49,47 +50,28 @@
 
 .analytics_center {
     display: flex;
-    gap:30px;
-    align-items: center;
+    gap: 30px;
+    align-items: flex-start;
     padding-left: 88px;
+    padding-right: 88px; /* Added right padding for balance */
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.analytics_chart1{
-    width: 450px;
+.analytics_chart1, .analytics_chart2, .overall_rating_card {
+    width: calc((100% - 60px) / 3); /* Divide available space equally between 3 charts */
     height: 380px;
-    margin-left: 0px;
     margin-top: 10px;
-    
-
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 0px 20px #00000029;
     border-radius: 15px;
     opacity: 1;
+    flex-shrink: 1; /* Allow shrinking */
+    flex-grow: 0; /* Don't grow beyond calculated width */
+    min-width: 0; /* Allow shrinking below default min-width */
 }
 
-.analytics_chart2{
-    width: 450px;
-    height: 380px;
-    margin-left: 0px;
-    margin-top: 10px;
-    
-
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 20px #00000029;
-    border-radius: 15px;
-    opacity: 1;
-}
-
-.overall_rating_card{
-    height: 380px;
-    width: 450px;
-
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 20px #00000029;
-    border-radius: 15px;
-    opacity: 1;
-}
-  
 .analytics_swot {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -100,37 +82,318 @@
 .sw, .ot {
     display: flex;
     flex-direction: column;
-    gap: 40px;  /* Increased gap between sections */
+    gap: 40px;
+    padding-top: 50px;
 }
 
 .swot-section {
-    display: flex;  /* Changed from grid to flex */
+    display: flex;
     gap: 20px;
-    align-items: flex-start;
+    flex-direction: column;
 }
 
 .swot-title {
     color: #5F249F;
-    font: normal normal bold 24px/33px Open Sans;
-    width: 160px;  /* Increased to fit "Opportunities" */
-    text-align: left;
-    flex-shrink: 0;  /* Prevent title from shrinking */
+    font: normal normal bold 24px/33px 'Open Sans', sans-serif;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .swot-content {
-    flex: 1;  /* Take remaining space */
+    flex: 1;
     background: #FFFFFF;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.0);
     border-radius: 8px;
-    padding: 0px;
-    font: normal normal normal 14px/20px Open Sans;
+    padding: 10px;
+    font: normal normal normal 14px/20px 'Open Sans', sans-serif;
     color: #4B5563;
     text-align: left;
+    overflow-y: auto; /* Make content scrollable */
+    height: 150px; /* Fixed height */
 }
 
-/* Remove these as they're no longer needed */
-.sw textarea, .ot textarea,
-.sw label, .ot label,
-.ot label[for="opportunities"] {
-    display: none;
+/* Add basic scrollbar styling */
+.swot-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.swot-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.swot-content::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+
+/* Large screens */
+@media (max-width: 1440px) {
+    .analytics_center {
+        padding-left: 70px;
+        padding-right: 70px;
+        gap: 25px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: calc((100% - 50px) / 3);
+        height: 350px;
+    }
+    
+    .analytics_swot {
+        padding: 40px 70px 0;
+    }
+    
+    .p1 {
+        padding: 35px 0 0px 70px;
+        font-size: 30px;
+    }
+    
+    .p2 {
+        padding: 0px 0 0px 70px;
+    }
+}
+
+/* Medium screens */
+@media (max-width: 1280px) {
+    .analytics {
+        padding-left: 240px;
+    }
+    
+    .analytics_center {
+        padding-left: 60px;
+        padding-right: 60px;
+        gap: 20px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: calc((100% - 40px) / 3);
+        height: 330px;
+    }
+    
+    .analytics_swot {
+        padding: 30px 60px 0;
+        gap: 25px;
+    }
+    
+    .p1 {
+        padding: 30px 0 0px 60px;
+        font-size: 28px;
+        line-height: 40px;
+    }
+    
+    .p2 {
+        padding: 0px 0 0px 60px;
+        line-height: 40px;
+    }
+    
+    .swot-title {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+/* Small tablets */
+@media (max-width: 992px) {
+    .analytics {
+        padding-left: 220px;
+    }
+    
+    .analytics_center {
+        padding-left: 40px;
+        padding-right: 40px;
+        gap: 15px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: calc((100% - 30px) / 3);
+        height: 300px;
+    }
+    
+    .analytics_swot {
+        padding: 30px 40px 0;
+        gap: 20px;
+    }
+    
+    .p1 {
+        padding: 25px 0 0px 40px;
+        font-size: 26px;
+        line-height: 36px;
+    }
+    
+    .p2 {
+        padding: 0px 0 0px 40px;
+        line-height: 30px;
+    }
+    
+    .sw, .ot {
+        gap: 30px;
+        padding-top: 30px;
+    }
+    
+    .swot-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .analytics {
+        padding-left: 0;
+        padding-bottom: 60px; /* Space for bottom navbar */
+    }
+    
+    .analytics_center {
+        padding: 0 20px;
+        gap: 20px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: 100%;
+        height: 280px;
+    }
+    
+    .analytics_swot {
+        grid-template-columns: 1fr;
+        padding: 20px 20px 0;
+    }
+    
+    .p1 {
+        padding: 20px 0 0px 20px;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
+    
+    .p2 {
+        padding: 0px 0 15px 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+    
+    .sw, .ot {
+        gap: 20px;
+        padding-top: 20px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .p1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    
+    .swot-title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .swot-content {
+        font-size: 13px;
+        line-height: 18px;
+    }
+}
+
+/* Support for high DPI screens (125% scaling) */
+@media (min-resolution: 120dpi) {
+    .analytics {
+        padding-top: 55px;
+    }
+    
+    .analytics_center {
+        gap: 25px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: calc((100% - 50px) / 3);
+    }
+    
+    .p1 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    
+    .p2 {
+        line-height: 40px;
+    }
+
+    .swot-content {
+        height: 140px;
+    }
+}
+
+/* Support for 150% scaling */
+@media (min-resolution: 144dpi) {
+    .analytics {
+        padding-top: 50px;
+        padding-left: 300px;
+    }
+    
+    .analytics_center {
+        gap: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: calc((100% - 40px) / 3);
+        height: 360px;
+    }
+    
+    .p1 {
+        font-size: 27px;
+        line-height: 38px;
+        padding-top: 25px;
+        padding-left: 60px;
+    }
+    
+    .p2 {
+        line-height: 35px;
+        padding-left: 60px;
+    }
+
+    .swot-content {
+        height: 130px;
+    }
+}
+
+/* Support for very high DPI screens (175%+) */
+@media (min-resolution: 192dpi) {
+    .analytics {
+        padding-top: 45px;
+        padding-left: 290px;
+    }
+    
+    .analytics_center {
+        gap: 15px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    .analytics_chart1, .analytics_chart2, .overall_rating_card {
+        width: calc((100% - 30px) / 3);
+    }
+    
+    .p1 {
+        font-size: 24px;
+        line-height: 34px;
+        padding-top: 20px;
+        padding-left: 50px;
+    }
+    
+    .p2 {
+        font-size: 11px;
+        line-height: 30px;
+        padding-left: 50px;
+    }
+    
+    .swot-title {
+        font-size: 21px;
+    }
+
+    .swot-content {
+        height: 120px;
+    }
 }

@@ -1,17 +1,19 @@
 .bar-statistics-container {
   display: flex;
-  flex-direction: column;  /* Added this */
+  flex-direction: column;
   background: white;
   border-radius: 0.5rem;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .bar-statistics-container .bar-statistics-title {
   color: #5F249F;
-  font: normal normal 600 24px/33px Open Sans, sans-serif;
+  font: normal normal 600 24px/33px 'Open Sans', sans-serif;
   margin-bottom: 2.5rem;
   text-align: center;
 }
@@ -20,32 +22,40 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  width: 100%;  /* Added this */
+  width: 100%;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  flex: 1;
 }
 
 .bar-statistic-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 100%;  /* Added this */
+  width: 100%;
 }
 
 .bar-statistic-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;  /* Added this */
+  width: 100%;
 }
 
 .bar-statistic-name {
   color: #45484B;
-  font: normal normal normal 16px/22px Open Sans;
+  font: normal normal normal 16px/22px 'Open Sans', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
 }
 
 .bar-statistic-value {
   color: #1F2937;
   font-size: 0.875rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .progress-bar-bg {
@@ -53,11 +63,115 @@
   height: 0.5rem;
   border-radius: 9999px;
   overflow: hidden;
-  width: 100%;  /* Added this */
+  width: 100%;
 }
 
 .progress-bar-fill {
   height: 100%;
   border-radius: 9999px;
   transition: width 0.3s ease;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1280px) {
+  .bar-statistics-container .bar-statistics-title {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+  }
+  
+  .bar-statistics-list {
+    gap: 1rem;
+  }
+  
+  .bar-statistic-name {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bar-statistics-container {
+    padding: 1.25rem;
+  }
+  
+  .bar-statistics-container .bar-statistics-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bar-statistic-name {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  
+  .bar-statistic-value {
+    font-size: 0.8125rem;
+  }
+  
+  .progress-bar-bg {
+    height: 0.4375rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bar-statistics-container {
+    padding: 1rem;
+  }
+  
+  .bar-statistics-container .bar-statistics-title {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .bar-statistics-list {
+    gap: 0.875rem;
+  }
+}
+
+/* Support for high DPI screens */
+@media (min-resolution: 120dpi) {
+  .bar-statistics-container .bar-statistics-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+@media (min-resolution: 144dpi) {
+  .bar-statistics-container {
+    padding: 1.25rem;
+  }
+  
+  .bar-statistics-container .bar-statistics-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bar-statistics-list {
+    gap: 1rem;
+  }
+}
+
+@media (min-resolution: 192dpi) {
+  .bar-statistics-container {
+    padding: 1rem;
+  }
+  
+  .bar-statistics-container .bar-statistics-title {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .bar-statistics-list {
+    gap: 0.875rem;
+  }
+  
+  .bar-statistic-name {
+    font-size: 14px;
+    line-height: 19px;
+  }
 }

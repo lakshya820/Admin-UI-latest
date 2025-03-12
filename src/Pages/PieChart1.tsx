@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 import '../css/PieChart1.css';
 
@@ -8,9 +8,12 @@ const CircularProgress = () => {
     { value: value },
     { value: 100 - value }
   ];
+  
+  // Add ref for TypeScript compatibility
+  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="circular-progress-container">
+    <div className="circular-progress-container" ref={containerRef}>
       <p className="circular-progress-title">Overall Rating</p>
       <div className="circular-progress-chart">
         <PieChart width={180} height={180}>
